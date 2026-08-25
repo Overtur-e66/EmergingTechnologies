@@ -269,6 +269,13 @@
     color: #000000;
 }
 
+.subtitles {
+    font-family: "Autour One", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000000;
+}
+
 
 /* Mobile stuff */
 
@@ -345,10 +352,4 @@ li {
 a {
     font-family: "JetBrains Mono", sans-serif;
     color: #3c2b3b;
-}
-
-h2 {
-    text-align: justify; 
-    text-justify: inter-word;
-    font-family: "JetBrains Mono", sans-serif;
 }
