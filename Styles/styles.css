@@ -33,21 +33,6 @@
 
 /* passive styles */
 
-/* .glassmorphiccard {
-    display: inline-block;
-
-     padding: 30px;
-     border-radius: 16px;
-     border: 1px solid rgba(255, 255, 255, 0.1);
-     background: 
-            linear-gradient(180deg, rgb(255, 255, 255, 0.3), rgba(90, 90, 90, 0, 0.3));
-     background-repeat: no-repeat;
-     backdrop-filter: blur(12px);
-     -webkit-backdrop-filter: blur(12px);
-     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-} 
-DEPRECATED */
-
 
 .imgshift1 {
     margin-left: 90px;
@@ -111,92 +96,7 @@ DEPRECATED */
     left: 150%;
 }
 
-.glassmorphiccard p {
-    text-align: justify;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-    word-break: break-word;
-}
-
-.glassmorphiccard img {
-    width: 100%;
-    max-height: 200px; 
-    object-fit: cover;  
-    border-radius: 12px; 
-}
-
-
-/* Gallery Wrapper */
-.image-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    flex: 1 1 350px;
-    max-width: 480px;
-}
-
-/* Base Image Card */
-.img-card {
-    width: 75%; /* Controls how wide each staggered card is */
-    box-sizing: border-box;
-    padding: 10px;
-}
-
-.img-card img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-}
-
-/* --- Staggering Logic --- */
-/* Push image 1 & 3 to the LEFT */
-.img-card.align-left {
-    margin-right: auto; 
-    margin-left: 0;
-}
-
-/* Push image 2 to the RIGHT */
-.img-card.align-right {
-    margin-left: auto; 
-    margin-right: 0;
-}
-
-/* Text Card Styling */
-.tech-info {
-    flex: 1 1 400px;
-    padding: 25px;
-    box-sizing: border-box;
-}
-
-.extlink {
-    text-align: right;
-    margin-top: 15px;
-    font-size: 0.85rem;
-}
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .emerging-tech-section {
-        flex-direction: column;
-        width: 95%;
-    }
-
-    .image-gallery, .tech-info {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    /* On phone screens, expand cards to full width for readability */
-    .img-card {
-        width: 100% !important;
-        margin: 0 !important;
-    }
-}
-
-
+/* wobbly wobbly title */
 
 .omori-text {
     font-family: 'Courier New', monospace;
@@ -246,13 +146,94 @@ DEPRECATED */
 /* HAHAHAHHAHAHAHHAHAHAH IM TOO LAZY TO DO JAVASCRIPTING */
 
 
+.glassmorphiccard p {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    word-break: break-word;
+}
+
+.glassmorphiccard img {
+    width: 100%;
+    max-height: 200px; 
+    object-fit: cover;  
+    border-radius: 12px; 
+}
 
 
+/* Gallery Wrapper */
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1 1 350px;
+    max-width: 480px;
+}
+
+.img-card {
+    width: 75%; 
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.img-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.img-card.align-left {
+    margin-right: auto; 
+    margin-left: 0;
+}
+
+.img-card.align-right {
+    margin-left: auto; 
+    margin-right: 0;
+}
+
+.tech-info {
+    flex: 1 1 400px;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.extlink {
+    text-align: right;
+    margin-top: 15px;
+    font-size: 0.85rem;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .emerging-tech-section {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .image-gallery, .tech-info {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* On phone screens, expand cards to full width for readability */
+    .img-card {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+}
 
 /* sectional styles */
 
-.HeadingDesu {
-    text-align: center;
+.HeadingDesu h1 {
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    
+    word-break: normal; 
+    overflow-wrap: normal;
+    hyphens: manual;
 }
 
 .emerging-tech-section {
@@ -292,7 +273,7 @@ DEPRECATED */
 /* Mobile stuff */
 
 @media (max-width: 768px) {
-    /* Main layout container holding your cards */
+    
     .container, body {
         display: flex;
         flex-direction: column;
@@ -301,11 +282,10 @@ DEPRECATED */
         padding: 15px;
     }
 
-    /* Force all cards to fill available mobile screen width */
     .glass-card, .image-card {
         width: 100% !important;
         max-width: 100% !important;
-        position: static !important; /* Removes absolute positioning overlaps */
+        position: static !important; 
         transform: none !important;
     }
 }
@@ -367,4 +347,8 @@ a {
     color: #3c2b3b;
 }
 
-
+h2 {
+    text-align: justify; 
+    text-justify: inter-word;
+    font-family: "JetBrains Mono", sans-serif;
+}
