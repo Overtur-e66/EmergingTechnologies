@@ -48,6 +48,7 @@
 } 
 DEPRECATED */
 
+
 .imgshift1 {
     margin-left: 90px;
     margin-top: 50px;
@@ -56,7 +57,13 @@ DEPRECATED */
 .imgdefault {
     width: auto;
     height: 200px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; 
 }
+
+/* GlassMorphicCard */
 
 .glassmorphiccard {
     display: inline-block;
@@ -102,6 +109,91 @@ DEPRECATED */
 
 .glassmorphiccard:hover::before {
     left: 150%;
+}
+
+.glassmorphiccard p {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    word-break: break-word;
+}
+
+.glassmorphiccard img {
+    width: 100%;
+    max-height: 200px; 
+    object-fit: cover;  
+    border-radius: 12px; 
+}
+
+
+/* Gallery Wrapper */
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1 1 350px;
+    max-width: 480px;
+}
+
+/* Base Image Card */
+.img-card {
+    width: 75%; /* Controls how wide each staggered card is */
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.img-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+/* --- Staggering Logic --- */
+/* Push image 1 & 3 to the LEFT */
+.img-card.align-left {
+    margin-right: auto; 
+    margin-left: 0;
+}
+
+/* Push image 2 to the RIGHT */
+.img-card.align-right {
+    margin-left: auto; 
+    margin-right: 0;
+}
+
+/* Text Card Styling */
+.tech-info {
+    flex: 1 1 400px;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.extlink {
+    text-align: right;
+    margin-top: 15px;
+    font-size: 0.85rem;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .emerging-tech-section {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .image-gallery, .tech-info {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* On phone screens, expand cards to full width for readability */
+    .img-card {
+        width: 100% !important;
+        margin: 0 !important;
+    }
 }
 
 
@@ -163,6 +255,16 @@ DEPRECATED */
     text-align: center;
 }
 
+.emerging-tech-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
 /* text styles */
 
@@ -185,6 +287,30 @@ DEPRECATED */
     font-weight: bold;
     color: #000000;
 }
+
+
+/* Mobile stuff */
+
+@media (max-width: 768px) {
+    /* Main layout container holding your cards */
+    .container, body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    /* Force all cards to fill available mobile screen width */
+    .glass-card, .image-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        position: static !important; /* Removes absolute positioning overlaps */
+        transform: none !important;
+    }
+}
+
+
 
 
 
@@ -241,14 +367,4 @@ a {
     color: #3c2b3b;
 }
 
-/* body {
-    background:
-        linear-gradient(120deg, #f7aff6, transparent 70%),
-        linear-gradient(240deg, #fa95f7, transparent 70%),
-        linear-gradient(360deg, rgb(52, 46, 51), transparent 70%);
-    background-size: 400% 400%;
-    background-repeat: no-repeat;
-
-    animation: wave 15s ease infinite;
-} */
 
