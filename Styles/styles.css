@@ -23,6 +23,13 @@
     margin-top: 20px;
 }
 
+.lfloat {
+    float: left;
+}
+
+.cenfloat {
+    float: center;
+}
 
 /* passive styles */
 
@@ -40,6 +47,16 @@
      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 } 
 DEPRECATED */
+
+.imgshift1 {
+    margin-left: 90px;
+    margin-top: 50px;
+}
+
+.imgdefault {
+    width: auto;
+    height: 200px;
+}
 
 .glassmorphiccard {
     display: inline-block;
