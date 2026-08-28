@@ -1,4 +1,4 @@
-/* general styles */
+/* general alignment */
 
 .cen-align {
      text-align: center;
@@ -23,60 +23,48 @@
     margin-top: 20px;
 }
 
-.lfloat {
-    float: left;
-}
-
-.cenfloat {
-    float: center;
-}
-
-/* passive styles */
-
-
-.imgshift1 {
-    margin-left: 90px;
-    margin-top: 50px;
-}
-
-.imgdefault {
-    width: auto;
-    height: 200px;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover; 
-}
+/* Passive Styles */
 
 /* GlassMorphicCard */
 
+
 .glassmorphiccard {
     display: inline-block;
-    padding: 30px;
+    position: relative;
+    overflow: visible !important;
+    margin: 20px 15px;
+    transition: transform 0.4s ease;
     border-radius: 16px;
+}
+
+.glassmorphiccard:hover {
+    transform: translateY(-4px); 
+}
+
+
+.card-content {
+    position: relative;
+    overflow: hidden !important; 
+    border-radius: 16px;
+    padding: 30px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(90, 90, 90, 0));
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-
-    margin: 20px 15px;
-    
-    position: relative;
-    overflow: hidden; 
     transition: all 0.4s ease;
 }
 
-.glassmorphiccard:hover {
-    transform: translateY(-4px); 
+
+.glassmorphiccard:hover .card-content {
     border-color: rgba(255, 255, 255, 0.8);
-    
     box-shadow: 0 0 25px rgba(255, 254, 255, 0.6), 
                 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
-.glassmorphiccard::before {
-    content: ''; /* dont remove this, its for a blank card */
+
+.card-content::before {
+    content: '';
     position: absolute;
     top: 0;
     left: -100%;
@@ -90,10 +78,188 @@
     );
     transform: skewX(-25deg);
     transition: left 0.75s ease;
+    pointer-events: none; 
 }
 
-.glassmorphiccard:hover::before {
+.glassmorphiccard:hover .card-content::before {
     left: 150%;
+}
+
+.glassmorphiccard p {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    word-break: break-word;
+}
+
+.glassmorphiccard img {
+    width: 100%;
+    max-height: 200px; 
+    object-fit: cover;  
+    border-radius: 12px; 
+}
+
+.sticker::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    width: 45px;
+    height: 65px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 25; 
+    pointer-events: none;
+    filter: drop-shadow(2px 4px 5px rgba(0, 0, 0, 0.3));
+    transform: rotate(-12deg);
+}
+
+/* Sticker Variations */
+
+.sticker-paperclip {
+    background-image: url('https://cdn.fbsbx.com/v/t59.2708-21/637191361_683867638083370_2835442065275448756_n.webp?_nc_cat=101&ccb=1-7&_nc_sid=de7c13&_nc_eui2=AeFatXDHZOQgsbN1a5sI7pNbF9v_brPh59QX2_9us-Hn1OW2Ne4o2cn_hIKQWTWmCPOwJ9wo9vgwpscT4UFU575x&_nc_ohc=XB_1xxOonhAQ7kNvwFTkUg8&_nc_oc=AdoZwYDGbujy-hvhRnEOlLsC65HFbdbLeiimorqCzr8ZDEFdm4Q5qDm-pERUg3zlKyg&_nc_ad=z-m&_nc_cid=0&_nc_zt=7&_nc_ht=cdn.fbsbx.com&_nc_gid=S1ywABwT40fQQq-KNnAePg&_nc_ss=7a22e&oh=03_Q7cD6QFnBvhPe_sCnXCVcziDNVjXxO5USs30_n5Hm8acdK6ZQA&oe=6A938DE3');
+}
+
+.sticker-template {
+    width: 80px;  
+    height: 80px; 
+    background-image: url('');
+}
+
+.sticker-stars {
+    width: 80px;  
+    height: 80px; 
+    background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHI2bDNlODcya2dpZWlma20zcm4yNzJqZDNtcXQwajU5MHJ2ZTk0ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fvT2uzkzsSWmmkvl5g/giphy.gif');
+}
+
+.sticker-shine {
+    width: 90px;  
+    height: 90px; 
+    background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjdldDJmYzc2dDFqZ3dqMTAzZjk5d3oyMWw1Nnc3ampzODgyaTRrbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/AZYVnZVRsDuMVY5GAu/giphy.gif');
+}
+
+.sticker-spreadshot {
+    width: 80px;  
+    height: 80px; 
+    background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNndwOXBiYmkybXlobTY1aWQybHB4NGYzZ3pucWM5bGhob3UyNmkyNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/JpYGwUtX2p343t7FHB/giphy.gif');
+}
+
+.sticker-mphone {
+    width: 80px;  
+    height: 80px; 
+    background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmVyN2Nrd2NhcGFhanFkdGZpejBjejlid3VpNjB4ZGg2eG90NWhzcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Fu4iqqwhRKregPzOX0/giphy.gif');
+}
+
+.sticker-alert {
+    width: 80px;  
+    height: 80px; 
+    background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3d0Z25pNTF1OWExeDZkNXV2dWQyZWtsMWo4Y21lczdjN21pM3plbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/yZrFdxrxjBrtkXpvp8/giphy.gif');
+}
+
+.sticker-sparkle {
+    width: 80px;  
+    height: 80px; 
+    background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGxxMmh5Y2NkdWs4cDh4bmVlN2kwN2wwamtjaWFqd3VxZ3VvazE2MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3OvvEXh9MU5246asQl/giphy.gif');
+}
+
+.sticker-happistar {
+    width: 80px;  
+    height: 80px; 
+    background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNng2a2ZxdjFsMDQ2cnh3MXZ5d2VsZGVrZTNsNXNsNWNrb25jamJzZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ObNTw8Uzwy6KQ/giphy.gif');
+}
+
+.sticker-porygon {
+    width: 80px;  
+    height: 80px; 
+    background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2M2Y3pnODc0bndzbDVyOG54MW82amtpNWtjeW5ndDNoazdwOXoyMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kwMYCO91dwsrI3pWN9/giphy.gif');
+}
+
+.sticker-computer {
+    width: 80px;  
+    height: 80px; 
+    background-image: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnBpMDk3MXNxM2l2cmVkd2h4Yzdjb2VhbWRrYWJza3RsZ2Rxcmh0cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Mztnae2NYtTQtnNpqG/giphy.gif');
+}
+
+.sticker-bostondog {
+    width: 80px;  
+    height: 80px; 
+    background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXdqMzZxdTNzd3lvbTNkMm9kdXN6YWx5MGVkbmVtYW5lZWZndGk3ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/j5bNquEGoYjPYe7ss1/giphy.gif');
+}
+
+.sticker-r2d2 {
+    width: 80px;  
+    height: 80px; 
+    background-image: url('https://media.tenor.com/WcsxzKMRNv8AAAAi/star-wars-robot.gif');
+}
+
+.sticker-dna {
+    width: 80px;  
+    height: 80px; 
+    background-image: url('https://media.tenor.com/-FtDkNwia6AAAAAi/animate-the-vax-covid.gif');
+}
+
+.sticker-catosis {
+    width: 90px;
+    height: 90px;
+    background-image: url('https://media1.tenor.com/m/UkN-X1p1GcYAAAAC/smol-smolcat.gif');
+}
+
+
+.sticker-large {
+    top: -30px;
+    width: 80px; 
+    height: 80px; 
+    background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHI2bDNlODcya2dpZWlma20zcm4yNzJqZDNtcXQwajU5MHJ2ZTk0ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fvT2uzkzsSWmmkvl5g/giphy.gif');
+}
+
+/* Sticker Item Tag */
+
+.sticker-item {
+    position: absolute;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 25;
+    pointer-events: none;
+    filter: drop-shadow(2px 4px 5px rgba(0, 0, 0, 0.25));
+}
+
+/* Sticker Location Modifiers */
+
+.sticker-top-left {
+    top: -25px;      
+    bottom: auto;
+    left: -25px;     
+    right: auto;
+    transform: rotate(-12deg);
+}
+
+/* 2. Top Right Corner */
+.sticker-top-right {
+    top: -25px;
+    bottom: auto;
+    left: auto;
+    right: -25px;    
+    transform: rotate(12deg);
+}
+
+/* 3. Bottom Left Corner */
+.sticker-bottom-left {
+    top: auto;
+    bottom: -25px;
+    left: -25px;
+    right: auto;
+    transform: rotate(12deg);
+}
+
+/* 4. Bottom Right Corner */
+.sticker-bottom-right {
+    top: auto;
+    bottom: -25px;
+    left: auto;
+    right: -25px;
+    transform: rotate(-12deg);
 }
 
 /* wobbly wobbly title */
@@ -147,23 +313,6 @@
 
 /* HAHAHAHHAHAHAHHAHAHAH IM TOO LAZY TO DO JAVASCRIPTING */
 
-
-.glassmorphiccard p {
-    text-align: justify;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-    word-break: break-word;
-}
-
-.glassmorphiccard img {
-    width: 100%;
-    max-height: 200px; 
-    object-fit: cover;  
-    border-radius: 12px; 
-}
-
-
 /* Gallery Wrapper */
 .image-gallery {
     display: flex;
@@ -209,7 +358,7 @@
     font-size: 0.85rem;
 }
 
-/* Mobile Adjustments */
+/* Mobile Adjustments 
 @media (max-width: 768px) {
     .emerging-tech-section {
         flex-direction: column;
@@ -221,7 +370,7 @@
         max-width: 100%;
     }
 
-    /* On phone screens, expand cards to full width for readability */
+    /* On phone screens, expand cards to full width for readability 
     .img-card {
         width: 100% !important;
         margin: 0 !important;
@@ -285,42 +434,7 @@
     color: #000000;
 }
 
-
-
-body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    
-    /* Crosshatch grid pattern */
-    background-image: 
-        linear-gradient(to right, rgba(62, 0, 62, 0.12) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(55, 0, 59, 0.12) 1px, transparent 1px);
-    background-size: 50px 50px;
-    
-    pointer-events: none;
-    z-index: -2;
-    animation: scrollGrid 12s linear infinite;
-}
-
-@keyframes scrollGrid {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 50px 50px; /* Seamless diagonal movement */
-    }
-}
-
-
 /* Mobile stuff */
-
-
-
-
 
 
 body {
@@ -358,6 +472,34 @@ body::before {
     z-index: 0;
 }
 
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    /* Crosshatch grid pattern */
+    background-image: 
+        linear-gradient(to right, rgba(62, 0, 62, 0.12) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(55, 0, 59, 0.12) 1px, transparent 1px);
+    background-size: 50px 50px;
+    
+    pointer-events: none;
+    z-index: -2;
+    animation: scrollGrid 12s linear infinite;
+}
+
+@keyframes scrollGrid {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px; /* Seamless diagonal movement */
+    }
+}
+
 
 p {
     text-align: justify; 
@@ -375,3 +517,105 @@ a {
     font-family: "JetBrains Mono", sans-serif;
     color: #3c2b3b;
 }
+
+/* unused */
+
+
+/*
+.glassmorphiccard {
+    display: inline-block;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(90, 90, 90, 0));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+    margin: 20px 15px;
+    
+    position: relative;
+    overflow: hidden; 
+    transition: all 0.4s ease;
+}
+
+.glassmorphiccard:hover {
+    transform: translateY(-4px); 
+    border-color: rgba(255, 255, 255, 0.8);
+    
+    box-shadow: 0 0 25px rgba(255, 254, 255, 0.6), 
+                0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.glassmorphiccard::before {
+    content: ''; /* dont remove this, its for a blank card *//*
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transform: skewX(-25deg);
+    border-radius: 16px;
+    transition: left 0.75s ease;
+}
+
+.glassmorphiccard:hover::before {
+    left: 150%;
+}
+*/
+
+
+/* sticker feature 
+
+.sticker {
+    overflow: visible !important;
+    position: relative;
+    margin-top: 35px;
+}
+
+.sticker::after {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: 20px;
+    width: 45px;
+    height: 65px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 25; /* Sits higher than the card shine *//*
+    pointer-events: none;
+    filter: drop-shadow(2px 4px 5px rgba(0, 0, 0, 0.25));
+    transform: rotate(-12deg);
+}
+
+/* --- STICKER VARIATIONS --- */
+
+/* 1. Default Paperclip 
+.sticker-paperclip::after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/87/Paperclip.svg');
+}
+
+/* 2. Star Sticker 
+.sticker-star::after {
+    top: -20px;
+    width: 50px;
+    height: 50px;
+    background-image: url('https://gallery.yopriceville.com/downloadfullsize/send/2568');
+    transform: rotate(15deg); /* Tilted right *//*
+}
+
+/* 3. Washi Tape 
+.sticker-tape::after {
+    top: -15px;
+    left: 30%; /* Centered along top edge *//*
+    width: 80px;
+    height: 30px;
+    background-image: url('https://media.tenor.com/L4ncxhqryfQAAAAj/cat.gif');
+    transform: rotate(-3deg);
+}
+
