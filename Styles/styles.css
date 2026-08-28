@@ -286,6 +286,36 @@
 }
 
 
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    /* Crosshatch grid pattern */
+    background-image: 
+        linear-gradient(to right, rgba(62, 0, 62, 0.12) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(55, 0, 59, 0.12) 1px, transparent 1px);
+    background-size: 50px 50px;
+    
+    pointer-events: none;
+    z-index: -2;
+    animation: scrollGrid 12s linear infinite;
+}
+
+@keyframes scrollGrid {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px; /* Seamless diagonal movement */
+    }
+}
+
+
 /* Mobile stuff */
 
 
