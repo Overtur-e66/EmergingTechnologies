@@ -271,6 +271,13 @@
     color: #000000;
 }
 
+.pseudotitles {
+    font-family: "Autour One", sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #000000;
+}
+
 .subtitles {
     font-family: "Autour One", sans-serif;
     font-size: 15px;
