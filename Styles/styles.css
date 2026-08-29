@@ -35,6 +35,8 @@
     margin: 20px 15px;
     transition: transform 0.4s ease;
     border-radius: 16px;
+    box-sizing: border-box;
+    max-width: 100%;
 }
 
 .glassmorphiccard:hover {
@@ -275,18 +277,20 @@
 /* wobbly wobbly title */
 
 .omori-text {
+
     font-family: 'Courier New', monospace;
-    font-size: clamp(1.6rem, 6vw, 2.5rem); 
-    line-height: 1.4 !important;          
-    overflow: visible !important;         
-    padding-bottom: 8px;  
+    font-size: clamp(1.6rem, 6vw, 2.5rem);
+    line-height: 1.4 !important;
+    overflow: visible !important;
+    padding-bottom: 8px;
+    background: linear-gradient(67deg, #2d2c2d, rgb(153, 4, 128));
+    -webkit-background-clip: text !important;
+    /*-webkit-text-fill-color: transparent !important;*/
+    background-clip: text !important;
+    color: transparent !important;
+} 
 
-    
-    color: #2d2c2d;
-    background: none;
-}
-
-
+/*
 @supports (-webkit-background-clip: text) or (background-clip: text) {
     .omori-text {
         background: linear-gradient(67deg, #2d2c2d, rgb(153, 4, 128));
@@ -304,10 +308,10 @@
         -webkit-background-clip: initial !important;
         background-clip: initial !important;
         -webkit-text-fill-color: #990480 !important; 
-        color: #990480 !important;
+        color: #080808 !important;
     }
 }
-
+*/
 .omori-text span {
     display: inline-block;
     animation: omoriWobble 2.4s ease-in-out infinite alternate;
@@ -385,6 +389,7 @@
     flex: 1 1 400px;
     padding: 25px;
     box-sizing: border-box;
+    max-width: 100%;
 }
 
 .extlink {
@@ -453,6 +458,67 @@
     font-size: 15px;
     font-weight: bold;
     color: #000000;
+}
+
+/* Mobile Stuff */
+
+@media (max-width: 768px) {
+    
+  
+    .emerging-tech-section {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 95% !important;
+        gap: 20px !important;
+    }
+
+    
+    .glassmorphiccard {
+        display: block !important;
+        width: 100% !important;
+        margin: 15px 0 !important;
+    }
+
+    .card-content {
+        padding: 20px 16px !important; 
+    }
+
+    .image-gallery {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .img-card {
+        width: 100% !important; 
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .img-card img {
+        height: auto !important;
+        max-height: 250px !important;
+    }
+
+
+    .paragraphs, p, li {
+        text-align: left !important;
+        hyphens: auto;
+    }
+
+    .sticker-item {
+        transform: scale(0.8);
+    }
+}
+
+
+@media (max-width: 480px) {
+    .maintitle, .titles {
+        font-size: 22px !important;
+    }
+
+    .pseudotitles {
+        font-size: 18px !important;
+    }
 }
 
 
@@ -580,6 +646,7 @@ footer {
         font-size: 0.9rem;
     }
 }
+
 
 p {
     text-align: justify; 
