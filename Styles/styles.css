@@ -283,9 +283,10 @@
     padding-bottom: 8px;  
     
     background: linear-gradient(67deg, #2d2c2d, rgb(153, 4, 128));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
 }
 
 .omori-text span {
