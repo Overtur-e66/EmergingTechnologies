@@ -393,25 +393,6 @@
     font-size: 0.85rem;
 }
 
-/* Mobile Adjustments 
-@media (max-width: 768px) {
-    .emerging-tech-section {
-        flex-direction: column;
-        width: 95%;
-    }
-
-    .image-gallery, .tech-info {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    /* On phone screens, expand cards to full width for readability 
-    .img-card {
-        width: 100% !important;
-        margin: 0 !important;
-    }
-}
-
 /* sectional styles */
 
 .HeadingDesu h1 {
@@ -474,8 +455,6 @@
     color: #000000;
 }
 
-/* Mobile stuff */
-
 
 body {
     background: 
@@ -520,7 +499,7 @@ body::after {
     width: 100vw;
     height: 100vh;
     
-    /* Crosshatch grid pattern */
+    /* Grid Pattern */
     background-image: 
         linear-gradient(to right, rgba(62, 0, 62, 0.12) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(55, 0, 59, 0.12) 1px, transparent 1px);
@@ -536,30 +515,71 @@ body::after {
         background-position: 0 0;
     }
     100% {
-        background-position: 50px 50px; /* Seamless diagonal movement */
+        background-position: 50px 50px;
     }
 }
 
 footer {
-  background: 
-        linear-gradient(120deg, #ffddfe, transparent 70%),
-        linear-gradient(240deg, #fcb2fa, transparent 70%),
-        linear-gradient(360deg, rgb(250, 170, 237), transparent 70%);
-    background-size: 400% 400%;
-    background-repeat: no-repeat;
-    animation: wave 15s ease infinite;
-  padding: 40px 20px;
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
 }
 
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  
-  /* This centers the container horizontally */
-  max-width: 1000px;
-  margin: 0 auto; 
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
+.footer-content .column {
+    flex: 1;
+}
+
+.footer-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 30px 15px;
+    }
+   
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-content br {
+        display: none;
+    }
+
+    .footer-content p {
+        margin: 8px 0;
+    }
+
+    .column h3 {
+        margin-bottom: 12px;
+        font-size: 1.3rem;
+    }
+
+    .footer-content ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 8px 12px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .footer-content li {
+        font-size: 0.9rem;
+    }
+}
 
 p {
     text-align: justify; 
