@@ -425,10 +425,6 @@
     font-family: "Autour One", sans-serif;
     font-size: 30px;
     font-weight: bold;
-    background: linear-gradient(67deg, #2d2c2d, rgb(153, 4, 128));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
 }
 
 .titles {
