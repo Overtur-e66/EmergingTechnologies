@@ -277,6 +277,39 @@
 /* wobbly wobbly title */
 
 .omori-text {
+    font-family: 'Courier New', monospace;
+    font-size: clamp(1.6rem, 6vw, 2.5rem);
+    line-height: 1.4 !important;
+    overflow: visible !important;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.omori-text span {
+    display: inline-block;
+    background: linear-gradient(67deg, #2d2c2d, rgb(153, 4, 128));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: omoriWobble 2.4s ease-in-out infinite alternate;
+}
+
+@media (max-width: 768px) {
+    .omori-text span {
+        background: none !important;
+        -webkit-background-clip: unset !important;
+        background-clip: unset !important;
+        -webkit-text-fill-color: #990480 !important; /* Solid purple fallback */
+        color: #990480 !important;
+        
+        font-weight: bold;
+        filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.3));
+    }
+}
+
+/*
+.omori-text {
 
     font-family: 'Courier New', monospace;
     font-size: clamp(1.6rem, 6vw, 2.5rem);
@@ -285,38 +318,15 @@
     padding-bottom: 8px;
     background: linear-gradient(67deg, #2d2c2d, rgb(153, 4, 128));
     -webkit-background-clip: text !important;
-    /*-webkit-text-fill-color: transparent !important;*/
     background-clip: text !important;
     color: transparent !important;
 } 
 
-/*
-@supports (-webkit-background-clip: text) or (background-clip: text) {
-    .omori-text {
-        background: linear-gradient(67deg, #2d2c2d, rgb(153, 4, 128));
-        -webkit-background-clip: text !important;
-        background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
-        color: transparent !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .omori-text {
-     
-        background: none !important;
-        -webkit-background-clip: initial !important;
-        background-clip: initial !important;
-        -webkit-text-fill-color: #990480 !important; 
-        color: #080808 !important;
-    }
-}
-*/
 .omori-text span {
     display: inline-block;
     animation: omoriWobble 2.4s ease-in-out infinite alternate;
 }
-
+*/
 
 @keyframes omoriWobble {
     0% {
