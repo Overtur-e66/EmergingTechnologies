@@ -91,6 +91,10 @@
     -ms-hyphens: auto;
     hyphens: auto;
     word-break: break-word;
+    background: linear-gradient(67deg, #2d2c2d, rgb(153, 4, 128));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .glassmorphiccard img {
@@ -205,6 +209,12 @@
     background-image: url('https://media1.tenor.com/m/UkN-X1p1GcYAAAAC/smol-smolcat.gif');
 }
 
+.sticker-tachyon {
+    width: 80px;  
+    height: 80px; 
+    background-image: url('https://img1.picmix.com/output/stamp/thumb/3/7/7/1/2851773_37095.gif');
+}
+
 
 .sticker-large {
     top: -30px;
@@ -266,11 +276,16 @@
 
 .omori-text {
     font-family: 'Courier New', monospace;
-    color: #000000;
+    
     font-size: clamp(1.6rem, 6vw, 2.5rem); 
     line-height: 1.4 !important;          
     overflow: visible !important;         
-    padding-bottom: 8px;                 
+    padding-bottom: 8px;  
+    
+    background: linear-gradient(67deg, #2d2c2d, rgb(153, 4, 128));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .omori-text span {
@@ -410,21 +425,30 @@
     font-family: "Autour One", sans-serif;
     font-size: 30px;
     font-weight: bold;
-    color: #000000;
+    background: linear-gradient(67deg, #2d2c2d, rgb(153, 4, 128));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .titles {
     font-family: "Autour One", sans-serif;
     font-size: 30px;
     font-weight: bold;
-    color: #000000;
+    background: linear-gradient(67deg, #2d2c2d, rgb(153, 4, 128));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .pseudotitles {
     font-family: "Autour One", sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
-    color: #000000;
+    background: linear-gradient(67deg, #6f6f6f, rgb(153, 63, 138));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .subtitles {
@@ -498,6 +522,26 @@ body::after {
     100% {
         background-position: 50px 50px; /* Seamless diagonal movement */
     }
+}
+
+footer {
+  background: 
+        linear-gradient(120deg, #ffddfe, transparent 70%),
+        linear-gradient(240deg, #fcb2fa, transparent 70%),
+        linear-gradient(360deg, rgb(250, 170, 237), transparent 70%);
+    background-size: 400% 400%;
+    background-repeat: no-repeat;
+    animation: wave 15s ease infinite;
+  padding: 40px 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  
+  /* This centers the container horizontally */
+  max-width: 1000px;
+  margin: 0 auto; 
 }
 
 
